@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy birthsday Alla!</title>
+  <style>body{background-image:url('eba050743f86a3adf6af2d3fe006d8a7.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;margin:0;width:100vw;height:100vh}#text-container{display:flex;align-items:center;justify-content:center;font-family:comic sans ms;flex-direction:column}#text-container h1{text-decoration:underline}#balloon-container,#rats-container,#text-container{position:absolute;left:0;top:0;width:100vw;height:100vh}#rats-container div{background-size:contain;background-repeat:no-repeat;opacity:.3}#balloon-container{height:100vh;padding:1em;box-sizing:border-box;display:flex;flex-wrap:wrap;overflow:hidden;transition:opacity .5s}.balloon{height:125px;width:105px;border-radius:75% 75% 70% 70%;position:relative}.balloon:before{content:"";height:75px;width:1px;padding:1px;background-color:#fdfd96;display:block;position:absolute;top:125px;left:0;right:0;margin:auto}.balloon:after{content:"▲";text-align:center;display:block;position:absolute;color:inherit;top:120px;left:0;right:0;margin:auto} @keyframes float{from{transform:translateY(100vh);opacity:1}to{transform:translateY(-300vh);opacity:0}}</style>
+</head>
+<body>
+  <div id="balloon-container"></div>
+  <div id="rats-container"></div>
+  <div id="text-container">
+    <h1>То є сайт для Алли</h1>
+    <p>Вітаю з днем народження!</p>
+    <p>Бажаю не сумувати</p>
+    <p>А просто залишатись собою</p>
+    <p>Так як ти і так крута</p>
+    <p>Алла - криска :)</p>
+  </div>
+  <script>const balloonContainer=document.getElementById("balloon-container");function random(t){return Math.floor(Math.random()*t)}function getRandomStyles(){var t=random(255),n=random(255),e=random(255),o=random(200),a=random(50),i=random(5)+5;return"background-color: rgba("+t+","+n+","+e+",0.7); color: rgba("+t+","+n+","+e+",0.7); box-shadow: inset -7px -3px 10px rgba("+(t-10)+","+(n-10)+","+(e-10)+",0.7); margin: "+o+"px 0 0 "+a+"px; animation: float "+i+"s ease-in infinite"}function createBalloons(t){for(var n=t;n>0;n--){var e=document.createElement("div");e.className="balloon",e.style.cssText=getRandomStyles(),balloonContainer.append(e)}}function removeBalloons(){balloonContainer.style.opacity=0,setTimeout(()=>{balloonContainer.remove()},500)}window.addEventListener("load",()=>{createBalloons(30)}),window.addEventListener("click",()=>{removeBalloons()});const ratsContainer=document.getElementById("rats-container"),ratsLinks=["https://i.ibb.co/vLrv7c4/rat3.png","https://i.ibb.co/GQ41hZh/rat4.png","https://i.ibb.co/vm4H6c2/rat5.png","https://i.ibb.co/DzLd3VZ/rat6.png","https://i.ibb.co/F3cHNZJ/rat1.png","https://i.ibb.co/8mxWY57/rat2.png"];function css(t,n){for(let e in n)t.style[e]=n[e]}function getSize(){var t,n=window,e=document,o=e.documentElement,a=e.getElementsByTagName("body")[0];return{width:n.innerWidth||o.clientWidth||a.clientWidth,height:n.innerHeight||o.clientHeight||a.clientHeight}}const usedCoords=[];function createRats(t){let n=(100*Math.random()+50).toFixed(),e=document.createElement("div");css(e,{width:n+"px",height:n+"px","background-image":"url("+t+")"});let o=(Math.random()*(getSize().width-n)).toFixed(),a=(Math.random()*(getSize().height-n)).toFixed();css(e,{position:"absolute",left:o+"px",top:a+"px"}),ratsContainer.appendChild(e)}ratsLinks.forEach(createRats);</script>
+</body>
+</html>
